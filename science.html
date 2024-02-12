@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Science Day Celebration</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #e6f7ff;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #004080;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #slideshow {
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #slideshow img {
+            display: none;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #004080;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        #institute-logo {
+            max-width: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Institute Logo -->
+    <img id="institute-logo" src="https://github.com/nithingowda381/Science-event-register-form/blob/main/VKITLOGO.png?raw=true" alt="Institute Logo">
+
+    <!-- Welcome Section with Sir C.V. Raman's Image -->
+    <section id="welcome">
+        <img src="https://www.civilsdaily.com/wp-content/uploads/2023/02/cvraman.jpg" alt="Sir C.V. Raman">
+        <h1>Welcome to the National Science Day Celebration</h1>
+        <p>Join us in commemorating the discovery of the Raman Effect by Sir C.V. Raman and celebrating the spirit of science!</p>
+        <div class="btn-container">
+            <button class="btn" onclick="window.location.href='YOUR_REGISTRATION_LINK'">Click Here to Register</button>
+        </div>
+    </section>
+
+    <section id="scienceDayInfo">
+        <h2>National Science Day</h2>
+        <p>On National Science Day, we celebrate the discovery of the Raman Effect by Sir C.V. Raman. It's a day to honor the contributions of scientists and promote scientific temper in the community.</p>
+    </section>
+
+    <!-- Image Slideshow -->
+    <section id="slideshow">
+        <img src="https://raw.githubusercontent.com/YourUsername/YourRepository/main/images/image1.jpg" alt="National Science Day Image 1">
+        <img src="https://raw.githubusercontent.com/YourUsername/YourRepository/main/images/image2.jpg" alt="National Science Day Image 2">
+        <!-- Add more images as needed -->
+    </section>
+
+    <div class="btn-container">
+        <button class="btn" onclick="prevImage()">Previous</button>
+        <button class="btn" onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        let currentImage = 0;
+        const images = document.querySelectorAll('#slideshow img');
+
+        function showImage(index) {
+            images.forEach(img => img.style.display = 'none');
+            images[index].style.display = 'block';
+        }
+
+        function nextImage() {
+            currentImage = (currentImage + 1) % images.length;
+            showImage(currentImage);
+        }
+
+        function prevImage() {
+            currentImage = (currentImage - 1 + images.length) % images.length;
+            showImage(currentImage);
+        }
+
+        showImage(currentImage);
+    </script>
+
+    <footer>
+        <p>&copy; [Year] National Science Day Celebration. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
