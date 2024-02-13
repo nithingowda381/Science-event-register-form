@@ -10,12 +10,15 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background-color 0.5s ease;
         }
 
         #institute-logo {
             display: block;
-            margin: 20px auto; /* Adjust the margin as needed */
-            max-width: 100%; /* Ensure the logo doesn't exceed its original size */
+            margin: 20px auto;
+            max-width: 100%;
         }
 
         #welcome,
@@ -24,15 +27,67 @@
         footer {
             margin: 20px 0;
             text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .btn-container {
-            text-align: center;
+        #welcome h1,
+        #scienceDayInfo h2,
+        #webPageInfo h2,
+        #webPageInfo h3,
+        footer p {
+            color: #007bff;
+        }
+
+        #welcome img {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .btn-container button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-container button:hover {
+            background-color: #218838;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            #welcome img {
+                width: 100%;
+                height: auto;
+            }
+
+            #welcome h1 {
+                font-size: 1.5em;
+            }
+
+            #scienceDayInfo,
+            #webPageInfo {
+                padding: 10px;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
         }
     </style>
-
-    <!-- Link to your SCSS file -->
-    <link rel="stylesheet" href="assets/css/style.scss">
 </head>
 
 <body>
@@ -46,7 +101,7 @@
         <h1>Welcome to the National Science Day Celebration</h1>
         <p>Join us in commemorating the discovery of the Raman Effect by Sir C.V. Raman and celebrating the spirit of science!</p>
         <div class="btn-container">
-            <button class="btn" onclick="window.location.href='YOUR_REGISTRATION_LINK'">Click Here to Register</button>
+            <button class="btn" id="registrationBtn" onclick="toggleRegistration()">Click Here to Register</button>
         </div>
     </section>
 
@@ -107,7 +162,22 @@
         <p>&copy; 2024 Math Puzzle and Poster Making Challenge conducted by VKIT. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for the image slideshow remains unchanged -->
+    <script>
+        // JavaScript for dynamic background and button switch animation
+        function toggleRegistration() {
+            document.body.style.backgroundColor = getRandomColor();
+            document.getElementById('registrationBtn').classList.toggle('animate');
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
 
 </body>
 
