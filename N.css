@@ -1,0 +1,59 @@
+/* General Styles */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#institute-logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+#welcome,
+#scienceDayInfo,
+#webPageInfo,
+footer {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+/* Welcome Section Animation */
+#welcome img {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for mobile view */
+    #welcome img {
+        width: 100%;
+        height: auto;
+    }
+
+    #welcome h1 {
+        font-size: 1.5em;
+    }
+
+    #scienceDayInfo,
+    #webPageInfo {
+        padding: 0 10px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+}
